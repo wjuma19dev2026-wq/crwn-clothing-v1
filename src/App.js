@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+// @ts-check
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+/**
+ * @typedef {Object} Category
+ * @property {number} id
+ * @property {string} title
+ * @property {string} imageUrl
+ */
+
+import { Fragment } from "react";
+import CategoryItem from "./components/category-item/category-item.component";
+import Directory from "./components/directory/directory.component";
+
+const App = () => {
+  /** @type {Category[]} */
+  const categories = [
+    {
+      id: 1,
+      title: "hats",
+      imageUrl: "https://placehold.co/200x200",
+    },
+    {
+      id: 2,
+      title: "jackets",
+      imageUrl: "https://placehold.co/200x200",
+    },
+    {
+      id: 3,
+      title: "sneakers",
+      imageUrl: "https://placehold.co/200x200",
+    },
+    {
+      id: 4,
+      title: "womes",
+      imageUrl: "https://placehold.co/200x200",
+    },
+    {
+      id: 4,
+      title: "mens",
+      imageUrl: "https://placehold.co/200x200 ",
+    },
+  ];
+
+  return <Directory categories={categories} />;
+};
 
 export default App;
