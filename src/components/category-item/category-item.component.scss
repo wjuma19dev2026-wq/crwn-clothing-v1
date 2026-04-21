@@ -1,0 +1,24 @@
+.category-conainer {
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background: rgba(255, 255, 255, 0.7);
+
+  .content {
+    padding: 20px 40px;
+    border: 1px solid #000;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.category-conainer:nth-child(-n + 3) {
+  grid-column: span 2;
+}
+
+.category-conainer:nth-child(n + 4) {
+  grid-column: span 3;
+}
