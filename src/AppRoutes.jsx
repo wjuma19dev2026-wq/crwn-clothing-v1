@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 // Importa tus componentes/páginas aquí
 import Navigation from "./shared/navigation";
 import Home from "./pages/home/home.component";
-import Shop from "./pages/shop/Shop";
+import Shop from "./pages/shop";
 
 const AppRoutes = () => {
   return (
