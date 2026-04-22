@@ -7,8 +7,9 @@ const CategoryItem = ({ category }) => {
       style={{ background: `url(${category.imageUrl})` }}
     >
       <div className="content">
-        <h3>{category.title}</h3>
-        <button type="button" className="btn">
+        <h3 className="text-capitalize">{category.title}</h3>
+        <button type="button" className="btn btn-light text-capitalize">
+          <i className="bi bi-cart mx-1"></i>
           Shop now
         </button>
       </div>
