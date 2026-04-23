@@ -10,7 +10,7 @@ const Login = () => {
       .then(response => {
         return createUserDocumentFromAuth(response.user)
       })
-      .then(console.log)
+      .then(userDocRef => console.log(userDocRef))
       .catch(err => {
         console.log('statusCode: ', err.statusCode)
         console.log('status: ', err.status)

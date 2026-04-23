@@ -40,6 +40,10 @@ export const createUserDocumentFromAuth =
           `Usuario ${displayName} registrado en Firestore.`,
         )
       }
+
+      console.log(
+        `El usuario ${displayName} ya existe en Firestore.`,
+      )
       return userDocRef
     } catch (err) {
       const appError = new AppError(err.message, 500)
