@@ -1,10 +1,16 @@
+import styles from './Login.module.css'
+
 import {
   createUserDocumentFromAuth,
   signInWithGooglePopupSvs,
-} from '../../services/authService'
-import styles from './Login.module.css'
+} from '../../services'
+import { useState } from 'react'
+
+import Toast from '../../shared/toast'
 
 const Login = () => {
+  const [error, setError] = useState(null)
+
   const signInWithGoogle = () => {
     signInWithGooglePopupSvs()
       .then(response => {
@@ -12,6 +18,7 @@ const Login = () => {
       })
       .then(userDocRef => console.log(userDocRef))
       .catch(err => {
+        setError(err)
         console.log('statusCode: ', err.statusCode)
         console.log('status: ', err.status)
         console.log('message: ', err.message)
@@ -19,13 +26,27 @@ const Login = () => {
       })
   }
 
+  const onCloseToast = () => {
+    setError(null)
+    console.clear()
+  }
+
   return (
     <main className={styles.container}>
-      <button
-        className="btn btn-danger btn-sm"
-        onClick={signInWithGoogle}>
-        Google Sign in with popup
-      </button>
+      <div className="btn-group">
+        <button
+          className="btn btn-danger btn-sm"
+          onClick={signInWithGoogle}>
+          Google Sign in with popup
+        </button>
+      </div>
+
+      {error ? (
+        <Toast
+          error={error}
+          closeToast={onCloseToast}
+        />
+      ) : null}
     </main>
   )
 }

@@ -8,8 +8,10 @@ import {
 import {
   getAuth,
   signInWithPopup,
-  // signInWithRedirect,
+  signInWithRedirect,
   GoogleAuthProvider,
+  setPersistence,
+  browserLocalPersistence,
 } from 'firebase/auth'
 
 const firebaseConfig = {
@@ -22,16 +24,16 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_APP_ID,
 }
 
-const provider = new GoogleAuthProvider()
+const googleAuthProvider = new GoogleAuthProvider()
 
-provider.setCustomParameters({
+googleAuthProvider.setCustomParameters({
   prompt: 'select_account',
 })
 
 const firebaseApp = initializeApp(firebaseConfig)
-export const auth = getAuth(firebaseApp)
-export const db = getFirestore(firebaseApp)
-export { doc, setDoc, getDoc }
+const auth = getAuth(firebaseApp)
+const db = getFirestore(firebaseApp)
+
 /**
  * Signs in the user using a Google provider via a popup window.
  * * @async
@@ -39,5 +41,20 @@ export { doc, setDoc, getDoc }
  * @returns {Promise<import('firebase/auth').UserCredential>} A promise that resolves with the user's credentials.
  * @throws {FirebaseError} Throws an error if the popup is closed or authentication fails.
  */
-export const signInWithGooglePopup = () =>
-  signInWithPopup(auth, provider)
+const signInWithGooglePopup = () =>
+  signInWithPopup(auth, googleAuthProvider)
+
+const signInWithGoogleRedirect = () =>
+  setPersistence(auth, browserLocalPersistence).then(() =>
+    signInWithRedirect(auth, googleAuthProvider),
+  )
+
+export {
+  doc,
+  setDoc,
+  getDoc,
+  auth,
+  db,
+  signInWithGooglePopup,
+  signInWithGoogleRedirect,
+}

@@ -1,6 +1,7 @@
 export {
   auth,
   signInWithGooglePopup,
+  signInWithGoogleRedirect,
   db,
   doc,
   setDoc,

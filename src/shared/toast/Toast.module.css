@@ -1,0 +1,14 @@
+.container {
+  display: block;
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  min-width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.toast-container {
+  /* width: 100%; */
+}
