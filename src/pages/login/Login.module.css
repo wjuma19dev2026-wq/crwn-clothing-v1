@@ -1,0 +1,10 @@
+.container {
+  padding: 2rem;
+}
+
+.google-icon {
+  background-color: var(--bs-danger);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
