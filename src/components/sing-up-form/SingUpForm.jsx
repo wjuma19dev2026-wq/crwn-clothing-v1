@@ -5,8 +5,8 @@ import {
   createAuthWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from '../../services'
+import Button from '../button'
 import FormInput from '../form-input/FormInput'
-import styles from './SingUpForm.module.css'
 
 const initialFieldsValue = {
   displayName: '',
@@ -75,7 +75,7 @@ const SingUpForm = () => {
   return (
     <Fragment>
       <div
-        className="col-8 offset-2 col-md-6 offset-md-6
+        className="col-8 offset-2 col-md-4 offset-md-8
        my-5">
         <form
           onSubmit={onHandlerSubmit}
@@ -93,7 +93,6 @@ const SingUpForm = () => {
               id="displayName"
               value={displayName}
               onChange={onHandlerChange}
-              // placeholder="Your display name."
             />
 
             <FormInput
@@ -104,7 +103,6 @@ const SingUpForm = () => {
               id="email"
               value={email}
               onChange={onHandlerChange}
-              // placeholder="joedoe@user.com"
             />
 
             <FormInput
@@ -115,7 +113,6 @@ const SingUpForm = () => {
               id="password"
               value={password}
               onChange={onHandlerChange}
-              // placeholder="******"
             />
 
             <FormInput
@@ -126,16 +123,14 @@ const SingUpForm = () => {
               id="confirmPassword"
               value={confirmPassword}
               onChange={onHandlerChange}
-              // placeholder="******"
             />
 
             <div className="mt-5">
-              <button
-                className="btn btn-outline-dark btn-sm"
-                type="submit"
-                id="button-addon2">
-                Registrar
-              </button>
+              <Button
+                buttonType="submit"
+                buttonClass="outline-dark">
+                Sign up
+              </Button>
             </div>
           </fieldset>
         </form>
