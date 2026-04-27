@@ -31,13 +31,13 @@ const Login = () => {
 
   return (
     <main className="container">
-      <div className="btn-group mt-3">
+      {/* <div className="btn-group mt-3">
         <button
           className="btn btn-danger btn-sm"
           onClick={signInWithGoogle}>
           Google Sign in with popup
         </button>
-      </div>
+      </div>*/}
 
       <div className="row">
         <SignUpForm />

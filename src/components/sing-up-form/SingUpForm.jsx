@@ -74,67 +74,70 @@ const SingUpForm = () => {
 
   return (
     <Fragment>
-      <div className="col-12 mt-5">
-        <p className={styles.title}>
-          Sign up with your email and password.
-        </p>
-      </div>
       <div
-        className="col-8 offset-2
-       mt-5">
-        <form onSubmit={onHandlerSubmit}>
-          <FormInput
-            label="Display Name"
-            type="text"
-            className="form-control"
-            name="displayName"
-            id="displayName"
-            value={displayName}
-            onChange={onHandlerChange}
-            placeholder="Your display name."
-          />
+        className="col-8 offset-2 col-md-6 offset-md-6
+       my-5">
+        <form
+          onSubmit={onHandlerSubmit}
+          noValidate>
+          <fieldset>
+            <legend className="mb-5">
+              Sign up with your email and password.
+            </legend>
 
-          <FormInput
-            label="Email"
-            type="email"
-            className="form-control"
-            name="email"
-            id="email"
-            value={email}
-            onChange={onHandlerChange}
-            placeholder="joedoe@user.com"
-          />
+            <FormInput
+              label="Display Name"
+              type="text"
+              className="form-control"
+              name="displayName"
+              id="displayName"
+              value={displayName}
+              onChange={onHandlerChange}
+              // placeholder="Your display name."
+            />
 
-          <FormInput
-            label="Password"
-            type="password"
-            className="form-control"
-            name="password"
-            id="password"
-            value={password}
-            onChange={onHandlerChange}
-            placeholder="******"
-          />
+            <FormInput
+              label="Email"
+              type="email"
+              className="form-control"
+              name="email"
+              id="email"
+              value={email}
+              onChange={onHandlerChange}
+              // placeholder="joedoe@user.com"
+            />
 
-          <FormInput
-            label="Confirm Password"
-            type="password"
-            className="form-control"
-            name="confirmPassword"
-            id="confirmPassword"
-            value={confirmPassword}
-            onChange={onHandlerChange}
-            placeholder="******"
-          />
+            <FormInput
+              label="Password"
+              type="password"
+              className="form-control"
+              name="password"
+              id="password"
+              value={password}
+              onChange={onHandlerChange}
+              // placeholder="******"
+            />
 
-          <div className="mt-2">
-            <button
-              className="btn btn-outline-dark btn-sm"
-              type="submit"
-              id="button-addon2">
-              Registrar
-            </button>
-          </div>
+            <FormInput
+              label="Confirm Password"
+              type="password"
+              className="form-control"
+              name="confirmPassword"
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={onHandlerChange}
+              // placeholder="******"
+            />
+
+            <div className="mt-5">
+              <button
+                className="btn btn-outline-dark btn-sm"
+                type="submit"
+                id="button-addon2">
+                Registrar
+              </button>
+            </div>
+          </fieldset>
         </form>
       </div>
     </Fragment>
