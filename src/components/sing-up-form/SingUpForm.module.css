@@ -1,0 +1,9 @@
+.title {
+  --bs-text-opacity: 1;
+  font-size: 1.5rem;
+  color: rgba(
+    var(--bs-primary-rgb),
+    var(--bs-text-opacity)
+  ) !important;
+  text-align: center;
+}

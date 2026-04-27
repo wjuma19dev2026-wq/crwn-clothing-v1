@@ -2,4 +2,5 @@ export {
   createUserDocumentFromAuth,
   signInWithGooglePopupSvs,
   signInWithGoogleRedirectSvs,
-} from './authService'
+  createAuthWithEmailAndPassword,
+} from './auth.service'
