@@ -5,7 +5,7 @@ import SingUpForm from '../../components/sing-up-form'
 const Authentication = () => {
   return (
     <main className="container">
-      <div className="row my-5">
+      <div className="row my-4">
         <div className="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 offset-xl-2 offset-lg-1 offset-xl-1">
           <SignInForm />
         </div>

@@ -1,0 +1,135 @@
+/* Reset y normalización moderna
+========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base
+   ========================================================================== */
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Tipografía
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+small {
+  font-size: 80%;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family:
+    ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 1em;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* Listas */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* Formularios
+   ========================================================================== */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+  line-height: inherit;
+}
+
+button,
+[type='button'],
+[type='submit'],
+[type='reset'] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Tablas
+   ========================================================================== */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Otros elementos
+   ========================================================================== */
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid currentColor;
+  opacity: 0.2;
+}
+
+[hidden] {
+  display: none !important;
+}

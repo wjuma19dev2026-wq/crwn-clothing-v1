@@ -1,6 +1,6 @@
 // @ts-check
 
-import './SignInForm.scss'
+import styles from './SignInForm.module.scss'
 import { useState } from 'react'
 import FormInput from '../../components/form-input'
 import Button from '../../components/button'
@@ -86,7 +86,12 @@ const SignInForm = () => {
     <form onSubmit={handlerSubmit}>
       <fieldset>
         <legend className="mb-5">
-          Sign in with email and password
+          <h2 className={styles.legend__heading}>
+            Already have an account?
+          </h2>
+          <p className={styles.legend__text}>
+            Sign in with your email and password.
+          </p>
         </legend>
 
         <FormInput

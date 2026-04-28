@@ -1,5 +1,6 @@
 // @ts-check
 
+import styles from './SingUpForm.module.scss'
 import { useState } from 'react'
 import {
   createAuthWithEmailAndPassword,
@@ -74,7 +75,12 @@ const SingUpForm = () => {
       noValidate>
       <fieldset>
         <legend className="mb-5">
-          Sign up with your email and password.
+          <h2 className={styles.legend__heading}>
+            Don't have an account?
+          </h2>
+          <p className={styles.legend__text}>
+            Sign up with your email and password.
+          </p>
         </legend>
 
         <FormInput
@@ -117,13 +123,11 @@ const SingUpForm = () => {
           onChange={onHandlerChange}
         />
 
-        <div className="mt-5">
-          <Button
-            buttonType="submit"
-            buttonClass="outline-dark">
-            Sign up
-          </Button>
-        </div>
+        <Button
+          buttonType="submit"
+          buttonClass="outline-dark">
+          Sign up
+        </Button>
       </fieldset>
     </form>
   )

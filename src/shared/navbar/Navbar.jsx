@@ -14,16 +14,16 @@ const Navbar = () => {
           <ul className="navbar-nav me-auto d-flex flex-row gap-3">
             <li className="nav-item">
               <NavLink
-                className="nav-link"
+                className="nav-link text-uppercase"
                 to="/shop">
                 Shop
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
-                className="nav-link"
+                className="nav-link text-uppercase"
                 to="/auth">
-                Salir
+                Sign in
               </NavLink>
             </li>
           </ul>
