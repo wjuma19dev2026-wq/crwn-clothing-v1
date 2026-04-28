@@ -1,4 +1,7 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from 'firebase/auth'
 import {
   signInWithGooglePopup,
   signInWithGoogleRedirect,
@@ -6,21 +9,39 @@ import {
   doc,
   setDoc,
   getDoc,
-  AppError,
   auth,
+  AuthError,
 } from '../utils'
 
-const signInWithGooglePopupSvs = async () => {
+/**
+ * Login de usuario con correo y password
+ * @param  {string} email       Email valido
+ * @param  {string} password    Password min 6
+ * @return {Promise<import('firebase/auth').UserCredential>} Promise que resuelve un UserCredential
+ */
+const loginUser = async (email, password) => {
   try {
-    const response = await signInWithGooglePopup()
-    return response
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password,
+    )
+    return userCredential
   } catch (err) {
-    throw new Error('An error ocurred: ', err)
+    throw new AuthError(err)
   }
 }
 
-const signInWithGoogleRedirectSvs = () => {
-  return signInWithGoogleRedirect()
+const signInWithGooglePopupSvs = async () => {
+  try {
+    return await signInWithGooglePopup()
+  } catch (err) {
+    throw new AuthError(err)
+  }
+}
+
+const signInWithGoogleRedirectSvs = async () => {
+  return await signInWithGoogleRedirect()
 }
 
 const createUserDocumentFromAuth = async (
@@ -51,60 +72,33 @@ const createUserDocumentFromAuth = async (
         emailVerified,
         ...aditionalInformation,
       })
-      console.log(
-        `Usuario ${displayName ? displayName : aditionalInformation.displayName} registrado en Firestore.`,
-      )
-    } else {
-      const authError = new Error(
-        `El usuario ${displayName ? displayName : aditionalInformation.displayName} ya existe en Firestore.`,
-      )
-      authError.statusCode = 404
-      throw authError
     }
 
     return userDocRef
   } catch (err) {
-    const appError = new AppError(
-      err.message,
-      err.statusCode ? err.statusCode : 500,
-    )
-    throw appError
+    throw new AuthError(err)
   }
 }
 
 /**
  * Crear un usuario con correo y password
- * @param  {string} displayName Nombre del usuario
  * @param  {string} email       Email valido
  * @param  {string} password    Password min 6
  * @return {Promise<import('firebase/auth').UserCredential>} Promise que resuelve un UserCredential
  */
 const createAuthWithEmailAndPassword = async (
-  displayName,
   email,
   password,
 ) => {
   try {
+    // Return an userCredential
     return await createUserWithEmailAndPassword(
       auth,
       email,
       password,
     )
   } catch (err) {
-    if (err.code === 'auth/operation-not-allowed') {
-      const authError = new AppError(
-        '💥 El registro por email no está habilitado.',
-        500,
-      )
-      throw authError
-    } else if (err.code === `auth/email-already-in-use`) {
-      const authError = new AppError(
-        '💥 Este correo ya está registrado.',
-        500,
-      )
-      throw authError
-    }
-    throw new Error(err)
+    throw new AuthError(err)
   }
 }
 
@@ -113,4 +107,5 @@ export {
   createUserDocumentFromAuth,
   signInWithGoogleRedirectSvs,
   createAuthWithEmailAndPassword,
+  loginUser,
 }

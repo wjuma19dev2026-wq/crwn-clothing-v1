@@ -9,7 +9,9 @@
   margin: 10px 0;
 
   .form-control {
-    border-bottom: 1px solid var(--bs-primary);
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--bs-gray);
     background-color: transparent;
     padding: 10px 10px 10px 5px;
     margin: 25px 0;

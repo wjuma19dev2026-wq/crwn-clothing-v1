@@ -9,6 +9,7 @@ import {
   getAuth,
   signInWithPopup,
   signInWithRedirect,
+  createUserWithEmailAndPassword,
   GoogleAuthProvider,
   setPersistence,
   browserLocalPersistence,

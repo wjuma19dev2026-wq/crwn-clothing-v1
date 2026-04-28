@@ -3,6 +3,7 @@ import {
   signInWithGooglePopupSvs,
 } from '../../services'
 import { useState } from 'react'
+import SignInForm from '../../components/sign-in-form'
 import SignUpForm from '../../components/sing-up-form'
 import Toast from '../../shared/toast'
 
@@ -40,6 +41,7 @@ const Login = () => {
       </div>*/}
 
       <div className="row">
+        <SignInForm />
         <SignUpForm />
       </div>
 

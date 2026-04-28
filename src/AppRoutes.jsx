@@ -5,15 +5,21 @@ import {
   Navigate,
 } from 'react-router-dom'
 
-// Importa tus componentes/páginas aquí
+// Shared
 import Navigation from './shared/navigation'
-import Login from './pages/login'
+
+// Pages
+import Authentication from './pages/authentication'
 import Home from './pages/home/home.component'
 import Shop from './pages/shop'
 
 const AppRoutes = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}>
       <Routes>
         {/* Ruta inicial sugerida */}
         <Route
@@ -28,8 +34,8 @@ const AppRoutes = () => {
             element={<Shop />}
           />
           <Route
-            path="login"
-            element={<Login />}
+            path="auth"
+            element={<Authentication />}
           />
         </Route>
         {/* Ruta de redirección o 404  */}

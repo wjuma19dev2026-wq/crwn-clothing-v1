@@ -3,4 +3,5 @@ export {
   signInWithGooglePopupSvs,
   signInWithGoogleRedirectSvs,
   createAuthWithEmailAndPassword,
+  loginUser,
 } from './auth.service'

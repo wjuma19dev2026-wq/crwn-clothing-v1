@@ -1,6 +1,6 @@
 // @ts-check
 
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import {
   createAuthWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -55,11 +55,7 @@ const SingUpForm = () => {
       return
     }
 
-    createAuthWithEmailAndPassword(
-      displayName,
-      email,
-      password,
-    )
+    createAuthWithEmailAndPassword(email, password)
       .then(({ user }) => {
         resetFormData()
         createUserDocumentFromAuth(user, { displayName })
@@ -73,69 +69,63 @@ const SingUpForm = () => {
   }
 
   return (
-    <Fragment>
-      <div
-        className="col-8 offset-2 col-md-4 offset-md-8
-       my-5">
-        <form
-          onSubmit={onHandlerSubmit}
-          noValidate>
-          <fieldset>
-            <legend className="mb-5">
-              Sign up with your email and password.
-            </legend>
+    <form
+      onSubmit={onHandlerSubmit}
+      noValidate>
+      <fieldset>
+        <legend className="mb-5">
+          Sign up with your email and password.
+        </legend>
 
-            <FormInput
-              label="Display Name"
-              type="text"
-              className="form-control"
-              name="displayName"
-              id="displayName"
-              value={displayName}
-              onChange={onHandlerChange}
-            />
+        <FormInput
+          label="Display Name"
+          type="text"
+          className="form-control"
+          name="displayName"
+          id="displayName"
+          value={displayName}
+          onChange={onHandlerChange}
+        />
 
-            <FormInput
-              label="Email"
-              type="email"
-              className="form-control"
-              name="email"
-              id="email"
-              value={email}
-              onChange={onHandlerChange}
-            />
+        <FormInput
+          label="Email"
+          type="email"
+          className="form-control"
+          name="email"
+          id="email"
+          value={email}
+          onChange={onHandlerChange}
+        />
 
-            <FormInput
-              label="Password"
-              type="password"
-              className="form-control"
-              name="password"
-              id="password"
-              value={password}
-              onChange={onHandlerChange}
-            />
+        <FormInput
+          label="Password"
+          type="password"
+          className="form-control"
+          name="password"
+          id="password"
+          value={password}
+          onChange={onHandlerChange}
+        />
 
-            <FormInput
-              label="Confirm Password"
-              type="password"
-              className="form-control"
-              name="confirmPassword"
-              id="confirmPassword"
-              value={confirmPassword}
-              onChange={onHandlerChange}
-            />
+        <FormInput
+          label="Confirm Password"
+          type="password"
+          className="form-control"
+          name="confirmPassword"
+          id="confirmPassword"
+          value={confirmPassword}
+          onChange={onHandlerChange}
+        />
 
-            <div className="mt-5">
-              <Button
-                buttonType="submit"
-                buttonClass="outline-dark">
-                Sign up
-              </Button>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-    </Fragment>
+        <div className="mt-5">
+          <Button
+            buttonType="submit"
+            buttonClass="outline-dark">
+            Sign up
+          </Button>
+        </div>
+      </fieldset>
+    </form>
   )
 }
 

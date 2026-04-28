@@ -7,4 +7,5 @@ export {
   setDoc,
   getDoc,
 } from './firebase.util'
-export { AppError } from './error.util'
+export { AppError, AuthError } from './error.util'
+export { FIREBASE_ERROR_MAP } from './firebase.errors'
