@@ -1,3 +1,3 @@
-import AppRoutes from "./AppRoutes";
-const App = () => <AppRoutes />;
-export default App;
+import AppRoutes from './AppRoutes'
+const App = () => <AppRoutes />
+export default App
