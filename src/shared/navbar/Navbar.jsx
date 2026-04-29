@@ -3,7 +3,7 @@ import styles from './Navbar.module.css'
 
 const Navbar = () => {
   return (
-    <nav className="navbar bg-light navbar-light">
+    <nav className="navbar bg-primary navbar-dark">
       <div className="container">
         <NavLink
           className="navbar-brand"

@@ -1,17 +1,17 @@
 // @ts-check
 
 import styles from './SignInForm.module.scss'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import FormInput from '../../components/form-input'
 import Button from '../../components/button'
 
 import {
   signInWithGooglePopupSvs,
   createUserDocumentFromAuth,
-  createAuthWithEmailAndPassword,
   loginUser,
 } from '../../services'
-import { auth } from '../../utils'
+import { UserContext } from '../../context'
+import { AuthError } from '../../utils'
 
 /**
  * Objeto con valores iniciales del Formulario
@@ -31,6 +31,8 @@ const SignInForm = () => {
     FORM_INITIAL_VALUES,
   )
 
+  const { setCurrentUser } = useContext(UserContext)
+
   const { email, password } = formValues
 
   const SignInWithGoogle = async () => {
@@ -40,8 +42,8 @@ const SignInForm = () => {
         user,
         {},
       )
-      console.log(userDocRef)
-    } catch (err) {
+      // TODO: setCurrentUser
+    } catch (/** @type {any} */ err) {
       console.log(err.status)
       console.log(err.code)
       console.log(err.statusCode)
@@ -62,7 +64,7 @@ const SignInForm = () => {
   /**
    * Form Handler Submit Event
    * @param  {import('react').FormEvent<HTMLFormElement> } e  Event
-   * @return {Promise} Does not return anything
+   * @return {Promise<import("firebase/auth").UserCredential | null | undefined>} Does not return anything
    */
   async function handlerSubmit(e) {
     e.preventDefault()
@@ -71,13 +73,16 @@ const SignInForm = () => {
       const isFormValid =
         email.trim() !== '' && password.trim() !== ''
       if (!isFormValid) {
-        return alert(
+        alert(
           'Todos los campos son obligatorios para iniciar sesion.',
         )
+        return null
       }
+
       const { user } = await loginUser(email, password)
+      setCurrentUser(user)
       console.log(user)
-    } catch (err) {
+    } catch (/** @type {any} */ err) {
       alert(`${err.status}: `.toUpperCase() + err.code)
     }
   }
@@ -116,6 +121,7 @@ const SignInForm = () => {
 
         <div className="d-flex gap-2">
           <Button
+            fn={() => null}
             buttonClass="dark"
             buttonType="submit">
             Sign in
@@ -123,7 +129,9 @@ const SignInForm = () => {
           </Button>
           <div className="btn-group">
             <div className="btn-group">
-              <button className="btn btn-primary">
+              <button
+                type="button"
+                className="btn btn-primary">
                 <i className="bi bi-google text-light"></i>
               </button>
             </div>

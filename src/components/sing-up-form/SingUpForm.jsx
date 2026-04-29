@@ -125,7 +125,7 @@ const SingUpForm = () => {
 
         <Button
           buttonType="submit"
-          buttonClass="outline-dark">
+          buttonClass="outline-dark btn-lg">
           Sign up
         </Button>
       </fieldset>
