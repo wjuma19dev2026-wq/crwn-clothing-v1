@@ -1,4 +1,5 @@
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
+import { onAuthStateChangedSvs } from '../services'
 
 export const UserContext = createContext({
   currentUser: null,
@@ -6,8 +7,21 @@ export const UserContext = createContext({
 })
 
 export const UserProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null)
+  /** @type {[CredentialUser | null, React.Dispatch<React.SetStateAction<CredentialUser | null>>]} */
+  const [currentUser, setCurrentUser] = useState(
+    /** @type {import('firebase/auth').User | null} */ (
+      null
+    ),
+  )
+
   const value = { currentUser, setCurrentUser }
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChangedSvs(user => {
+      setCurrentUser(user)
+    })
+    return () => unsubscribe()
+  }, [])
 
   return (
     <UserContext.Provider value={value}>

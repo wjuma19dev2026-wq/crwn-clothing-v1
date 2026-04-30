@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Smartphone",
+    "imageUrl": "https://example.com/images/smartphone.jpg",
+    "price": 999.99
+  },
+  {
+    "id": 2,
+    "name": "Laptop",
+    "imageUrl": "https://example.com/images/laptop.jpg",
+    "price": 1499.99
+  },
+  {
+    "id": 3,
+    "name": "Tablet",
+    "imageUrl": "https://example.com/images/tablet.jpg",
+    "price": 799.99
+  },
+  {
+    "id": 4,
+    "name": "Headphones",
+    "imageUrl": "https://example.com/images/headphones.jpg",
+    "price": 129.99
+  },
+  {
+    "id": 5,
+    "name": "Coffee Maker",
+    "imageUrl": "https://example.com/images/coffee-maker.jpg",
+    "price": 49.99
+  },
+  {
+    "id": 6,
+    "name": "Smartwatch",
+    "imageUrl": "https://example.com/images/smartwatch.jpg",
+    "price": 79.99
+  },
+  {
+    "id": 7,
+    "name": "Water Bottle",
+    "imageUrl": "https://example.com/images/water-bottle.jpg",
+    "price": 19.99
+  },
+  {
+    "id": 8,
+    "name": "Gaming Console",
+    "imageUrl": "https://example.com/images/gaming-console.jpg",
+    "price": 2499.99
+  },
+  {
+    "id": 9,
+    "name": "Smart TV",
+    "imageUrl": "https://example.com/images/smart-tv.jpg",
+    "price": 1099.99
+  },
+  {
+    "id": 10,
+    "name": "Microwave",
+    "imageUrl": "https://example.com/images/microwave.jpg",
+    "price": 49.99
+  },
+  {
+    "id": 11,
+    "name": "Refrigerator",
+    "imageUrl": "https://example.com/images/refrigerator.jpg",
+    "price": 799.99
+  },
+  {
+    "id": 12,
+    "name": "Cooking Pot",
+    "imageUrl": "https://example.com/images/cooking-pot.jpg",
+    "price": 29.99
+  },
+  {
+    "id": 13,
+    "name": "Dishwasher",
+    "imageUrl": "https://example.com/images/dishwasher.jpg",
+    "price": 49.99
+  },
+  {
+    "id": 14,
+    "name": "Coffee Maker",
+    "imageUrl": "https://example.com/images/coffee-maker.jpg",
+    "price": 49.99
+  },
+  {
+    "id": 15,
+    "name": "Smartphone",
+    "imageUrl": "https://example.com/images/smartphone.jpg",
+    "price": 999.99
+  },
+  {
+    "id": 16,
+    "name": "Laptop",
+    "imageUrl": "https://example.com/images/laptop.jpg",
+    "price": 1499.99
+  },
+  {
+    "id": 17,
+    "name": "Tablet",
+    "imageUrl": "https://example.com/images/tablet.jpg",
+    "price": 799.99
+  },
+  {
+    "id": 18,
+    "name": "Headphones",
+    "imageUrl": "https://example.com/images/headphones.jpg",
+    "price": 129.99
+  },
+  {
+    "id": 19,
+    "name": "Coffee Maker",
+    "imageUrl": "https://example.com/images/coffee-maker.jpg",
+    "price": 49.99
+  },
+  {
+    "id": 20,
+    "name": "Smartwatch",
+    "imageUrl": "https://example.com/images/smartwatch.jpg",
+    "price": 79.99
+  }
+]

@@ -1,7 +1,12 @@
 import { NavLink } from 'react-router-dom'
-import styles from './Navbar.module.css'
+import styles from './Navbar.module.scss'
+import { useContext } from 'react'
+import { UserContext } from '../../context'
+import { signOutSvs } from '../../services'
 
 const Navbar = () => {
+  const { currentUser } = useContext(UserContext)
+
   return (
     <nav className="navbar bg-primary navbar-dark">
       <div className="container">
@@ -20,11 +25,19 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
-                className="nav-link text-uppercase"
-                to="/auth">
-                Sign in
-              </NavLink>
+              {currentUser ? (
+                <a
+                  onClick={signOutSvs}
+                  className={`${styles.navLink} nav-link text-uppercase`}>
+                  Logout
+                </a>
+              ) : (
+                <NavLink
+                  className="nav-link text-uppercase"
+                  to="/auth">
+                  Sign in
+                </NavLink>
+              )}
             </li>
           </ul>
         </div>

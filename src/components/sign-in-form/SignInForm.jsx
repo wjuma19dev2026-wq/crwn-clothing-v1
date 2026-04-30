@@ -11,7 +11,6 @@ import {
   loginUser,
 } from '../../services'
 import { UserContext } from '../../context'
-import { AuthError } from '../../utils'
 
 /**
  * Objeto con valores iniciales del Formulario
@@ -30,8 +29,6 @@ const SignInForm = () => {
   const [formValues, setFormValues] = useState(
     FORM_INITIAL_VALUES,
   )
-
-  const { setCurrentUser } = useContext(UserContext)
 
   const { email, password } = formValues
 
@@ -80,8 +77,9 @@ const SignInForm = () => {
       }
 
       const { user } = await loginUser(email, password)
-      setCurrentUser(user)
-      console.log(user)
+      // @ts-ignore
+      // console.log(user)
+      alert('User get logged in successfully!.')
     } catch (/** @type {any} */ err) {
       alert(`${err.status}: `.toUpperCase() + err.code)
     }

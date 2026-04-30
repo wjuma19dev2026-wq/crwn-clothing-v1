@@ -1,9 +1,11 @@
 import './App.css'
 import AppRoutes from './AppRoutes'
-import { UserProvider } from './context'
+import { UserProvider, ProductProvider } from './context'
 const App = () => (
   <UserProvider>
-    <AppRoutes />
+    <ProductProvider>
+      <AppRoutes />
+    </ProductProvider>
   </UserProvider>
 )
 export default App

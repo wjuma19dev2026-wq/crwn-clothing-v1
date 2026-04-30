@@ -1,5 +1,6 @@
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
 } from 'firebase/auth'
 import {
@@ -15,8 +16,8 @@ import {
 
 /**
  * Login de usuario con correo y password
- * @param  {string} email       Email valido
- * @param  {string} password    Password min 6
+ * @param  {string} email
+ * @param  {string} password
  * @return {Promise<import('firebase/auth').UserCredential>} Promise que resuelve un UserCredential
  */
 const loginUser = async (email, password) => {
@@ -31,6 +32,11 @@ const loginUser = async (email, password) => {
     throw new AuthError(err)
   }
 }
+
+const onAuthStateChangedSvs = fn =>
+  onAuthStateChanged(auth, fn)
+
+const signOutSvs = async () => auth.signOut()
 
 const signInWithGooglePopupSvs = async () => {
   try {
@@ -103,9 +109,11 @@ const createAuthWithEmailAndPassword = async (
 }
 
 export {
+  onAuthStateChangedSvs,
   signInWithGooglePopupSvs,
   createUserDocumentFromAuth,
   signInWithGoogleRedirectSvs,
   createAuthWithEmailAndPassword,
   loginUser,
+  signOutSvs,
 }
