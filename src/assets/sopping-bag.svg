@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Bolsa -->
+  <path d="M6 2l1 4h10l1-4z"/>
+  <path d="M3 6h18l-2 14H5L3 6z"/>
+  <!-- Contador círculo -->
+  <circle id="cart-counter-bg" cx="12" cy="12" r="6" fill="red"/>
+  <!-- Texto contador -->
+  <text id="cart-counter" x="12" y="16" text-anchor="middle" font-size="10" fill="white">0</text>
+</svg>

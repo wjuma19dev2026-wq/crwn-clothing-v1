@@ -1,0 +1,25 @@
+.shoppingBox {
+  position: relative;
+  height: 35px;
+  width: 35px;
+  margin-top: -5px;
+
+  .ShoppingIcon {
+    width: 100%;
+    height: 100%;
+  }
+
+  .articlesLength {
+    position: absolute;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    // background-color: red;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

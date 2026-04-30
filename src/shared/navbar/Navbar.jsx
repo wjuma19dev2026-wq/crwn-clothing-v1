@@ -3,6 +3,8 @@ import styles from './Navbar.module.scss'
 import { useContext } from 'react'
 import { UserContext } from '../../context'
 import { signOutSvs } from '../../services'
+import CartIcon from '../../components/cart-icon'
+import CartDropdown from '../../components/cart-dropdown/CartDropdown'
 
 const Navbar = () => {
   const { currentUser } = useContext(UserContext)
@@ -39,7 +41,9 @@ const Navbar = () => {
                 </NavLink>
               )}
             </li>
+            <CartIcon />
           </ul>
+          <CartDropdown />
         </div>
       </div>
     </nav>
