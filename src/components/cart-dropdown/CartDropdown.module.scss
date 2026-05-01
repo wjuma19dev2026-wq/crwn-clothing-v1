@@ -1,8 +1,21 @@
 .cardDropdownContainer {
   /** Position */
+  background-color: var(--bs-light);
   position: absolute;
   top: 50px;
   z-index: 5;
+
+  /** Toggle show dropdown */
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.3s aease,
+    visibility 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
 
   /** General Styles */
   padding: 15px;

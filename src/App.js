@@ -1,10 +1,16 @@
 import './App.css'
 import AppRoutes from './AppRoutes'
-import { UserProvider, ProductProvider } from './context'
+import {
+  UserProvider,
+  ProductProvider,
+  CartProvider,
+} from './context'
 const App = () => (
   <UserProvider>
     <ProductProvider>
-      <AppRoutes />
+      <CartProvider>
+        <AppRoutes />
+      </CartProvider>
     </ProductProvider>
   </UserProvider>
 )

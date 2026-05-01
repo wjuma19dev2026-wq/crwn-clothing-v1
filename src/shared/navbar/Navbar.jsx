@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import styles from './Navbar.module.scss'
 import { useContext } from 'react'
-import { UserContext } from '../../context'
+import { CartContext, UserContext } from '../../context'
 import { signOutSvs } from '../../services'
 import CartIcon from '../../components/cart-icon'
 import CartDropdown from '../../components/cart-dropdown/CartDropdown'
@@ -10,7 +10,7 @@ const Navbar = () => {
   const { currentUser } = useContext(UserContext)
 
   return (
-    <nav className="navbar bg-primary navbar-dark">
+    <nav className="navbar bg-light navbar-light">
       <div className="container">
         <NavLink
           className="navbar-brand"
