@@ -14,11 +14,7 @@ const Shop = () => {
           <div
             key={product.id}
             className="col-3 mt-3">
-            <ProductCard
-              name={product.name}
-              imageUrl={product.imageUrl}
-              price={product.price}
-            />
+            <ProductCard product={product} />
           </div>
         ))}
       </div>

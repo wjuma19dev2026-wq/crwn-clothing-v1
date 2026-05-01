@@ -15,13 +15,28 @@ const CartDropdown = () => {
     console.log('Handler Checkout')
   }
 
-  const { isCartOpen } = useContext(CartContext)
+  const { isCartOpen, cartItems } = useContext(CartContext)
 
   return (
     <div
       className={clxs(styles.cardDropdownContainer, {
         [styles.open]: isCartOpen,
       })}>
+      <ul
+        className={clxs(
+          'list-group list-group-flush',
+          styles.cartDropdownList,
+        )}>
+        {cartItems.map((product, i) => (
+          <li
+            key={i}
+            className="list-group-item">
+            {product.name} - ${product.price} x{' '}
+            {product.quantity}
+          </li>
+        ))}
+      </ul>
+
       <div className={styles.btnCheckout}>
         <Button
           fn={onHandlerCheckout}

@@ -9,7 +9,7 @@
   visibility: hidden;
   opacity: 0;
   transition:
-    opacity 0.3s aease,
+    opacity 0.3s ease,
     visibility 0.3s ease;
 
   &.open {
@@ -35,6 +35,12 @@
   /** Displaying */
   display: flex;
   flex-direction: column;
+
+  .cartDropdownList {
+    height: 88%;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
 
   .btnCheckout {
     position: absolute;
