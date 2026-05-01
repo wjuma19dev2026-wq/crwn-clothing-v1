@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import styles from './Checkout.module.scss'
 import { CartContext } from '../../context/CartContext'
+import CheckoutItem from '../../components/checkout-item'
 
 const Checkout = () => {
   const { cartItems, removeItemFromCart } =
@@ -8,28 +9,32 @@ const Checkout = () => {
 
   return (
     <main className={styles.container}>
-      <h1>Vista Checkout</h1>
-      <div className={styles.cartItems}>
-        {cartItems.map(cartItem => (
-          <div
-            key={cartItem.id}
-            className={styles.cartItem}>
-            <span>{cartItem.name}</span>
-            <span>Quantity: {cartItem.quantity}</span>
-            {/* buttons for incrementing and decrementing quantity can be added here */}
-            <div className="gap-2 d-flex">
-              <button className="btn btn-primary">+</button>
-              <button
-                className="btn btn-danger"
-                onClick={() =>
-                  removeItemFromCart(cartItem)
-                }>
-                -
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
+      <h1>Checkout</h1>
+      <table className="table table-hover">
+        <thead>
+          <tr>
+            <th
+              scope="col"
+              className={styles.productImageColumn}>
+              Product
+            </th>
+            <th scope="col">Description</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cartItems.map(item => (
+            <CheckoutItem
+              key={item.id}
+              cartItem={item}
+              removeItemFromCart={removeItemFromCart}
+            />
+          ))}
+        </tbody>
+        <tfoot></tfoot>
+      </table>
     </main>
   )
 }
