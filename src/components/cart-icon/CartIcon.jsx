@@ -6,7 +6,7 @@ import { useContext } from 'react'
 import { CartContext } from '../../context'
 
 const CartIcon = () => {
-  const { isCartOpen, setIsCartOpen } =
+  const { isCartOpen, setIsCartOpen, cartCount } =
     useContext(CartContext)
 
   /**
@@ -29,7 +29,9 @@ const CartIcon = () => {
         src={ShoppingIcon}
         className={styles.ShoppingIcon}
       />
-      <span className={styles.articlesLength}>12</span>
+      <span className={styles.articlesLength}>
+        {cartCount}
+      </span>
     </div>
   )
 }
