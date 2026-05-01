@@ -3,12 +3,13 @@ import SHOP_DATA from '../../shop-data.json'
 import { useContext } from 'react'
 import { ProductContext } from '../../context/ProductContext'
 import ProductCard from '../../components/product-card'
+import clsx from 'clsx'
 
 const Shop = () => {
   const { products } = useContext(ProductContext)
 
   return (
-    <main className="container">
+    <main className={clsx(styles.container)}>
       <div className="row">
         {products.map(product => (
           <div

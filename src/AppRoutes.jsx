@@ -12,6 +12,7 @@ import Navigation from './shared/navigation'
 import Authentication from './pages/authentication'
 import Home from './pages/home/home.component'
 import Shop from './pages/shop'
+import Checkout from './pages/checkout'
 
 const AppRoutes = () => {
   return (
@@ -36,6 +37,10 @@ const AppRoutes = () => {
           <Route
             path="auth"
             element={<Authentication />}
+          />
+          <Route
+            path="checkout"
+            element={<Checkout />}
           />
         </Route>
         {/* Ruta de redirección o 404  */}
