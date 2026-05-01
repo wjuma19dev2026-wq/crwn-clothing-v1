@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
       <div className={styles.cardHeader}>
         <img
           className={styles.imageUrl}
-          src={imageUrl}
+          src="https://i.ebayimg.com/images/g/dUMAAOSwmZpmmrFi/s-l1600.webp"
           alt={name}
         />
         <div className={styles.overlay}>

@@ -2,121 +2,121 @@
   {
     "id": 1,
     "name": "Smartphone",
-    "imageUrl": "https://images.unsplash.com/photo-1592286927505-1def25115558?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/smartphone.jpg",
     "price": 999.99
   },
   {
     "id": 2,
     "name": "Laptop",
-    "imageUrl": "https://images.unsplash.com/photo-1588872657840-790ff3bde4c7?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/laptop.jpg",
     "price": 1499.99
   },
   {
     "id": 3,
     "name": "Tablet",
-    "imageUrl": "https://images.unsplash.com/photo-1544716278-ca5e3af4abd8?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/tablet.jpg",
     "price": 799.99
   },
   {
     "id": 4,
     "name": "Headphones",
-    "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/headphones.jpg",
     "price": 129.99
   },
   {
     "id": 5,
     "name": "Coffee Maker",
-    "imageUrl": "https://images.unsplash.com/photo-1514432324607-2e2be62dba48?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/coffee-maker.jpg",
     "price": 49.99
   },
   {
     "id": 6,
     "name": "Smartwatch",
-    "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/smartwatch.jpg",
     "price": 79.99
   },
   {
     "id": 7,
     "name": "Water Bottle",
-    "imageUrl": "https://images.unsplash.com/photo-1602088113235-229c19758e9f?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/water-bottle.jpg",
     "price": 19.99
   },
   {
     "id": 8,
     "name": "Gaming Console",
-    "imageUrl": "https://images.unsplash.com/photo-1486572788984-2c63cecf3888?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/gaming-console.jpg",
     "price": 2499.99
   },
   {
     "id": 9,
     "name": "Smart TV",
-    "imageUrl": "https://images.unsplash.com/photo-1522869635100-ce306132583a?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/smart-tv.jpg",
     "price": 1099.99
   },
   {
     "id": 10,
     "name": "Microwave",
-    "imageUrl": "https://images.unsplash.com/photo-1599598980309-cac78b6fa6a3?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/microwave.jpg",
     "price": 49.99
   },
   {
     "id": 11,
     "name": "Refrigerator",
-    "imageUrl": "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/refrigerator.jpg",
     "price": 799.99
   },
   {
     "id": 12,
     "name": "Cooking Pot",
-    "imageUrl": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/cooking-pot.jpg",
     "price": 29.99
   },
   {
     "id": 13,
     "name": "Dishwasher",
-    "imageUrl": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/dishwasher.jpg",
     "price": 49.99
   },
   {
     "id": 14,
     "name": "Coffee Maker",
-    "imageUrl": "https://images.unsplash.com/photo-1517668808822-9ebb02ae2a0e?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/coffee-maker.jpg",
     "price": 49.99
   },
   {
     "id": 15,
     "name": "Smartphone",
-    "imageUrl": "https://images.unsplash.com/photo-1511707267537-b85faf00021e?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/smartphone.jpg",
     "price": 999.99
   },
   {
     "id": 16,
     "name": "Laptop",
-    "imageUrl": "https://images.unsplash.com/photo-1516705967846-83146207351f?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/laptop.jpg",
     "price": 1499.99
   },
   {
     "id": 17,
     "name": "Tablet",
-    "imageUrl": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/tablet.jpg",
     "price": 799.99
   },
   {
     "id": 18,
     "name": "Headphones",
-    "imageUrl": "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/headphones.jpg",
     "price": 129.99
   },
   {
     "id": 19,
     "name": "Coffee Maker",
-    "imageUrl": "https://images.unsplash.com/photo-1517830286629-e8b65f2a30ff?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/coffee-maker.jpg",
     "price": 49.99
   },
   {
     "id": 20,
     "name": "Smartwatch",
-    "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop",
+    "imageUrl": "https://example.com/images/smartwatch.jpg",
     "price": 79.99
   }
 ]

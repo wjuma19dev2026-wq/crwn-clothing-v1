@@ -9,7 +9,6 @@ import { CartContext } from '../../context'
 
 /** Components */
 import Button from '../button/Button'
-import CartItem from '../cart-item'
 
 const CartDropdown = () => {
   const onHandlerCheckout = () => {
@@ -29,10 +28,12 @@ const CartDropdown = () => {
           styles.cartDropdownList,
         )}>
         {cartItems.map((product, i) => (
-          <CartItem
+          <li
             key={i}
-            product={product}
-          />
+            className="list-group-item">
+            {product.name} - ${product.price} x{' '}
+            {product.quantity}
+          </li>
         ))}
       </ul>
 
