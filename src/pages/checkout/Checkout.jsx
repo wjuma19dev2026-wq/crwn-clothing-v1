@@ -12,7 +12,7 @@ const Checkout = () => {
       <h1>Checkout</h1>
       <table className="table table-hover">
         <thead>
-          <tr>
+          <tr className="text-center">
             <th
               scope="col"
               className={styles.productImageColumn}>

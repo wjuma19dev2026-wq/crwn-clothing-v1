@@ -18,7 +18,7 @@ const CheckoutItem = ({ cartItem }) => {
     clearItemFromCart(cartItem)
 
   return (
-    <tr>
+    <tr className="text-center">
       <th scope="row">
         <img
           className={styles.imageUrl}
