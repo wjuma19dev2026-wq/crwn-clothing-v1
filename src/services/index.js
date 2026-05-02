@@ -6,4 +6,5 @@ export {
   createAuthWithEmailAndPassword,
   loginUser,
   signOutSvs,
+  addCollectionAndDocuments,
 } from './auth.service'

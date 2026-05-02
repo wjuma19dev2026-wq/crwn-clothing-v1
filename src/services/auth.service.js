@@ -13,6 +13,38 @@ import {
   auth,
   AuthError,
 } from '../utils'
+import { collection, writeBatch } from 'firebase/firestore'
+
+/***********************************************************************************************************
+ * Agregar colecciones y documentos a Firestore
+ **********************************************************************************************************/
+
+const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd,
+) => {
+  const collectionRef = collection(db, collectionKey)
+  const batch = writeBatch(db)
+
+  try {
+    objectsToAdd.forEach(async obj => {
+      const docRef = doc(
+        collectionRef,
+        obj.title.toLowerCase(),
+      )
+      batch.set(docRef, obj)
+    })
+    await batch.commit()
+    console.log('Done')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+/***********************************************************************************************************
+ * Este servicio se encarga de manejar toda la lógica relacionada con la autenticación de usuarios utilizando Firebase Authentication.
+ * Proporciona funciones para iniciar sesión con Google, crear usuarios con correo y contraseña, y gestionar el estado de autenticación.
+ ***********************************************************************************************************/
 
 /**
  * Login de usuario con correo y password
@@ -116,4 +148,5 @@ export {
   createAuthWithEmailAndPassword,
   loginUser,
   signOutSvs,
+  addCollectionAndDocuments,
 }
