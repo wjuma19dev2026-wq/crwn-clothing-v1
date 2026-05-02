@@ -10,10 +10,14 @@ import { CartContext } from '../../context'
 /** Components */
 import Button from '../button/Button'
 import CartItem from '../cart-item'
+import { useNavigate } from 'react-router-dom'
 
 const CartDropdown = () => {
+  const navigate = useNavigate()
+
   const onHandlerCheckout = () => {
     console.log('Handler Checkout')
+    navigate('/checkout')
   }
 
   const { isCartOpen, cartItems } = useContext(CartContext)
