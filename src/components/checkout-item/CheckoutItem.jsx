@@ -28,25 +28,28 @@ const CheckoutItem = ({ cartItem }) => {
       </th>
       <td>{name}</td>
       <td>
-        <button
-          className="btn btn-light"
+        <a
+          className="px-3"
           onClick={handlerRemoveItemFromCart}>
+          {/* &#10094; */}
           <i class="bi bi-caret-left-fill"></i>
-        </button>
-        <span className="mx-2">{quantity}</span>
-        <button
-          className="btn btn-light"
+        </a>
+        <span>{quantity}</span>
+        <a
+          className="px-3"
           onClick={handlerAddItemToCart}>
+          {/* &#10095; */}
           <i class="bi bi-caret-right-fill"></i>
-        </button>
+        </a>
       </td>
       <td>{price}</td>
       <td>
-        <button
-          className="btn btn-light"
+        <a
+          className="px-4"
           onClick={handlerClearItemFromCart}>
-          &#10005;
-        </button>
+          {/* &#10005; */}
+          <i class="bi bi-x-circle-fill"></i>
+        </a>
       </td>
     </tr>
   )

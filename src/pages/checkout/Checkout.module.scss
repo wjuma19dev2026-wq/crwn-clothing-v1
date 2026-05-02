@@ -1,7 +1,14 @@
 .container {
   padding: 2rem;
-}
 
-.productImageColumn {
-  width: 100px;
+  .productImageColumn {
+    width: 100px;
+  }
+
+  .totalLabel {
+    font-weight: bold;
+
+    td {
+    }
+  }
 }

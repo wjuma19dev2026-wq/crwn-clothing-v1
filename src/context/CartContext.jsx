@@ -6,19 +6,20 @@ const {
 } = require('react')
 
 const CartContext = createContext({
-  isCartOpen: false,
   setIsCartOpen: () => {},
-  cartItems: [],
   addItemToCart: () => {},
-  cartCount: 0,
   removeItemFromCart: () => {},
   clearItemFromCart: () => {},
+  isCartOpen: false,
+  cartItems: [],
+  cartCount: 0,
+  carTotal: 0,
 })
 
 const addCartItem = (cartItems, productToAdd) => {
   // Find if cartItems constains producToAdd
   const EXISTING_CART_ITEM = _.find(cartItems, {
-    ['id']: productToAdd.id,
+    id: productToAdd.id,
   })
 
   // If found, increment quantity
@@ -38,13 +39,13 @@ const addCartItem = (cartItems, productToAdd) => {
 const removeCartItem = (cartItems, productToRemove) => {
   // Find the item to remove
   const EXISTING_CART_ITEM = _.find(cartItems, {
-    ['id']: productToRemove.id,
+    id: productToRemove.id,
   })
 
   // If quantity is 1, remove that item from cart
   if (EXISTING_CART_ITEM.quantity === 1) {
     return _.reject(cartItems, {
-      ['id']: productToRemove.id,
+      id: productToRemove.id,
     })
   }
 
@@ -59,7 +60,7 @@ const removeCartItem = (cartItems, productToRemove) => {
 
 const clearCartItem = (cartItems, productToClear) => {
   return _.reject(cartItems, {
-    ['id']: productToClear.id,
+    id: productToClear.id,
   })
 }
 

@@ -33,7 +33,11 @@ const Checkout = () => {
             />
           ))}
         </tbody>
-        <tfoot></tfoot>
+        <tfoot>
+          <tr className={styles.totalLabel}>
+            <td colSpan="5">Total $100.00</td>
+          </tr>
+        </tfoot>
       </table>
     </main>
   )
