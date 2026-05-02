@@ -68,6 +68,7 @@ const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [cartItems, setcartItems] = useState([])
   const [cartCount, setCartCount] = useState(0)
+  const [cartTotal, setCartTotal] = useState(0)
 
   const addItemToCart = productToAdd => {
     setcartItems(addCartItem(cartItems, productToAdd))
@@ -90,6 +91,15 @@ const CartProvider = ({ children }) => {
     setCartCount(newCartCount)
   }, [cartItems])
 
+  useEffect(() => {
+    const newCartTotal = _.reduce(
+      cartItems,
+      (total, item) => total + item.price * item.quantity,
+      0,
+    )
+    setCartTotal(newCartTotal)
+  }, [cartItems])
+
   const value = {
     isCartOpen,
     setIsCartOpen,
@@ -98,6 +108,7 @@ const CartProvider = ({ children }) => {
     cartCount,
     removeItemFromCart,
     clearItemFromCart,
+    cartTotal,
   }
 
   return (
