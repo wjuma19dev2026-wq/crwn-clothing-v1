@@ -35,7 +35,10 @@ const Checkout = () => {
         </tbody>
         <tfoot>
           <tr className={styles.totalLabel}>
-            <td colSpan="5">Total ${cartTotal}</td>
+            <td colSpan="5">
+              Total $
+              {Intl.NumberFormat({}).format(cartTotal)}
+            </td>
           </tr>
         </tfoot>
       </table>
