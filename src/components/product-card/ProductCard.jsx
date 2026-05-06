@@ -5,7 +5,7 @@ import Button from '../button/Button'
 import styles from './ProductCard.module.scss'
 import { CartContext } from '../../context/CartContext'
 
-const ProductCard = ({ product }) => {
+export const ProductCard = ({ product }) => {
   const { name, imageUrl, price } = product
   const { addItemToCart } = useContext(CartContext)
 
@@ -44,5 +44,3 @@ const ProductCard = ({ product }) => {
     </div>
   )
 }
-
-export default ProductCard

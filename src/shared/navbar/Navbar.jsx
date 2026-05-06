@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import styles from './Navbar.module.scss'
 import { useContext } from 'react'
-import { CartContext, UserContext } from '../../context'
+import { UserContext } from '../../context'
 import { signOutSvs } from '../../services'
 import CartIcon from '../../components/cart-icon'
 import CartDropdown from '../../components/cart-dropdown/CartDropdown'
@@ -25,12 +25,20 @@ const Navbar = () => {
                 to="/shop">
                 Shop
               </NavLink>
+            </li>{' '}
+            <li className="nav-item">
+              <NavLink
+                className="nav-link text-uppercase"
+                to="/contact">
+                Contact
+              </NavLink>
             </li>
             <li className="nav-item">
               {currentUser ? (
                 <a
                   onClick={signOutSvs}
-                  className={`${styles.navLink} nav-link text-uppercase`}>
+                  class
+                  Name={`${styles.navLink} nav-link text-uppercase`}>
                   Logout
                 </a>
               ) : (

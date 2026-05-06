@@ -12,12 +12,21 @@ import {
   getDoc,
   auth,
   AuthError,
+  AppError,
 } from '../utils'
-import { collection, writeBatch } from 'firebase/firestore'
+import {
+  collection,
+  getDocs,
+  query,
+  writeBatch,
+} from 'firebase/firestore'
 
-/***********************************************************************************************************
- * Agregar colecciones y documentos a Firestore
- **********************************************************************************************************/
+/**
+ * Agregar coleccion a la base de datos
+ *
+ * collectionKey => 'categories'
+ * objectToAdd => Objeto con la data a almacenar en la coleccion
+ */
 
 const addCollectionAndDocuments = async (
   collectionKey,

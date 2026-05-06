@@ -2,16 +2,16 @@ import './App.css'
 import AppRoutes from './AppRoutes'
 import {
   UserProvider,
-  ProductProvider,
+  CategoryMapProvider,
   CartProvider,
 } from './context'
 const App = () => (
   <UserProvider>
-    <ProductProvider>
+    <CategoryMapProvider>
       <CartProvider>
         <AppRoutes />
       </CartProvider>
-    </ProductProvider>
+    </CategoryMapProvider>
   </UserProvider>
 )
 export default App

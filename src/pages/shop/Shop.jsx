@@ -1,25 +1,23 @@
-import styles from './Shop.module.scss'
-import SHOP_DATA from '../../shop-data.json'
 import { useContext } from 'react'
-import { ProductContext } from '../../context/ProductContext'
-import ProductCard from '../../components/product-card'
-import clsx from 'clsx'
+import { CategoryMapContext } from '../../context/CategoryMapContext'
+import { CategoryPreview } from '../../components'
 
 const Shop = () => {
-  const { products } = useContext(ProductContext)
+  const { categoryMap } = useContext(CategoryMapContext)
 
   return (
-    <main className={clsx(styles.container)}>
-      <div className="row">
-        {products.map(product => (
-          <div
-            key={product.id}
-            className="col-3 mt-3">
-            <ProductCard product={product} />
-          </div>
-        ))}
-      </div>
-    </main>
+    <div className="container">
+      {Object.keys(categoryMap).map((title, i) => {
+        const products = categoryMap[title]
+        return (
+          <CategoryPreview
+            key={i}
+            title={title}
+            products={products}
+          />
+        )
+      })}
+    </div>
   )
 }
 
