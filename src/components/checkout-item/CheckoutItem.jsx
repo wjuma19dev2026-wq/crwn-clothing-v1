@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import styles from './CheckoutItem.module.scss'
 import { CartContext } from '../../context/CartContext'
 
-const CheckoutItem = ({ cartItem }) => {
+export const CheckoutItem = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem
 
   const {
@@ -54,5 +54,3 @@ const CheckoutItem = ({ cartItem }) => {
     </tr>
   )
 }
-
-export default CheckoutItem

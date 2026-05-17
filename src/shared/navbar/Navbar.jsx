@@ -25,22 +25,22 @@ const Navbar = () => {
                 to="/shop">
                 Shop
               </NavLink>
-            </li>{' '}
-            <li className="nav-item">
+            </li>
+            {/*      <li className="nav-item">
               <NavLink
                 className="nav-link text-uppercase"
                 to="/contact">
                 Contact
               </NavLink>
-            </li>
+            </li>*/}
             <li className="nav-item">
               {currentUser ? (
-                <a
+                <span
                   onClick={signOutSvs}
                   class
                   Name={`${styles.navLink} nav-link text-uppercase`}>
                   Logout
-                </a>
+                </span>
               ) : (
                 <NavLink
                   className="nav-link text-uppercase"

@@ -1,4 +1,4 @@
-.category-conainer {
+.directory-container {
   height: 200px;
   position: relative;
   display: flex;
@@ -14,10 +14,10 @@
   }
 }
 
-.category-conainer:nth-child(-n + 3) {
+.directory-container:nth-child(-n + 3) {
   grid-column: span 2;
 }
 
-.category-conainer:nth-child(n + 4) {
+.directory-container:nth-child(n + 4) {
   grid-column: span 3;
 }

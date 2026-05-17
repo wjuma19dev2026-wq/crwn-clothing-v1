@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ProductCard } from '../../components'
@@ -17,9 +18,11 @@ export const Category = () => {
 
   return (
     <div className="container">
-      <div className="row mt-5">
-        <div>
-          <h1 className="text-capitalize">{category}</h1>
+      <div className="row">
+        <div className="col-12 mt-5">
+          <h1 className={clsx(styles.categoryTitle)}>
+            {category}
+          </h1>
         </div>
         {products &&
           products.map(product => (

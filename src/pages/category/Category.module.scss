@@ -1,3 +1,14 @@
-.container {
-  padding: 2rem;
+.categoryTitle {
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0 15px;
+  display: flex;
+  align-items: flex-end;
+  width: auto;
+
+  border-left: 5px solid var(--bs-primary);
+  color: var(--bs-primary );
+  // background-color: rgba(0, 0, 0, 0.2);
 }

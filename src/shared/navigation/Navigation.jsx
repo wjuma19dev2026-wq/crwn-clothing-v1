@@ -1,6 +1,6 @@
-import { Outlet } from "react-router-dom";
-import Navbar from "../navbar";
-import styles from "./Navigation.module.css";
+import { Outlet } from 'react-router-dom'
+import Navbar from '../navbar'
+import styles from './Navigation.module.css'
 
 const Navigation = () => {
   return (
@@ -8,7 +8,7 @@ const Navigation = () => {
       <Navbar />
       <Outlet />
     </div>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation
